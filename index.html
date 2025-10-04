@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portofolio | Developer Minimal</title>
+  <meta name="description" content="Portofolio profesional satu halaman dengan gaya minimal, responsif, menggunakan Bootstrap.">
+  <meta name="theme-color" content="#0F172A">
+
+  <!-- Google Fonts: Poppins -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons (optional) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #0F172A;
+      --cyan: #06B6D4;
+      --text: #0B1220;
+      --muted: #64748B;
+      --surface: #F8FAFC;
+      --white: #FFFFFF;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      background-color: var(--white);
+    }
+    .section {
+      padding-top: 96px;
+      padding-bottom: 96px;
+    }
+    .bg-surface { background-color: var(--surface); }
+    .text-navy { color: var(--navy); }
+    .text-muted-2 { color: var(--muted); }
+    .btn-primary {
+      background-color: var(--navy);
+      border-color: var(--navy);
+    }
+    .btn-primary:hover, .btn-primary:focus {
+      background-color: #0b1323;
+      border-color: #0b1323;
+      box-shadow: 0 0 0 0.25rem rgba(6,182,212,0.25);
+    }
+    .btn-outline-primary {
+      color: var(--navy);
+      border-color: var(--navy);
+    }
+    .btn-outline-primary:hover, .btn-outline-primary:focus {
+      color: #fff;
+      background-color: var(--navy);
+      border-color: var(--navy);
+      box-shadow: 0 0 0 0.25rem rgba(6,182,212,0.25);
+    }
+    .badge-skill {
+      background-color: var(--surface);
+      color: var(--navy);
+      border: 1px solid rgba(15,23,42,0.1);
+      padding: 0.5rem 0.75rem;
+      border-radius: 999px;
+      font-weight: 600;
+    }
+    .navbar-custom {
+      backdrop-filter: saturate(180%) blur(8px);
+      background-color: rgba(255,255,255,0.75);
+    }
+    .navbar-custom .nav-link.active {
+      color: var(--cyan);
+      font-weight: 600;
+    }
+    .hero-illus {
+      border-radius: 12px;
+      box-shadow: 0 10px 24px rgba(15,23,42,0.15);
+    }
+    .avatar {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 6px 16px rgba(15,23,42,0.2);
+      border: 4px solid var(--white);
+    }
+    .card-project img {
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+    .focus-ring:focus {
+      outline: none;
+      box-shadow: 0 0 0 0.25rem rgba(6,182,212,0.45) !important;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="80" tabindex="0">
+
+  <!-- Navbar -->
+  <nav id="mainNav" class="navbar navbar-expand-lg navbar-light fixed-top navbar-custom border-bottom">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-navy" href="#hero">Yopi Hendriansah</a>
+      <button class="navbar-toggler focus-ring" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link focus-ring" href="#hero">Beranda</a></li>
+          <li class="nav-item"><a class="nav-link focus-ring" href="#about">Tentang</a></li>
+          <li class="nav-item"><a class="nav-link focus-ring" href="#skills">Skill</a></li>
+          <li class="nav-item"><a class="nav-link focus-ring" href="#projects">Proyek</a></li>
+          <li class="nav-item"><a class="nav-link focus-ring" href="#contact">Kontak</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header id="hero" class="section pt-5">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6">
+          <h1 class="display-5 fw-bold text-navy mb-3">Halo, saya Nama Anda</h1>
+          <p class="lead text-muted-2 mb-4">Frontend Developer yang fokus pada antarmuka bersih, aksesibilitas, dan performa. Saya membangun pengalaman web yang responsif dan ramah pengguna.</p>
+          <div class="d-flex gap-3">
+            <a href="#projects" class="btn btn-primary btn-lg focus-ring" aria-label="Lihat Proyek">Lihat Proyek</a>
+            <a href="#contact" class="btn btn-outline-primary btn-lg focus-ring" aria-label="Kontak Saya">Kontak Saya</a>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <img src="assets/yopi.jpg" alt="Ilustrasi portofolio" class="img-fluid hero-illus">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Tentang -->
+  <section id="about" class="section bg-surface">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-md-4 text-center">
+          <img src="https://i.pravatar.cc/300?img=12" alt="Foto profil" class="avatar">
+        </div>
+        <div class="col-md-8">
+          <h2 class="fw-bold text-navy mb-3">Tentang Saya</h2>
+          <p class="mb-3">Saya memiliki pengalaman dalam membangun antarmuka web dengan HTML, CSS, JavaScript, dan Bootstrap. Saya menyukai desain minimalis, struktur yang rapi, dan kode yang mudah dirawat.</p>
+          <p class="mb-0">Nilai utama: konsistensi, aksesibilitas, dan kolaborasi. Saya terbiasa bekerja dengan tim lintas disiplin untuk menghasilkan produk yang berorientasi pengguna.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skill -->
+  <section id="skills" class="section">
+    <div class="container">
+      <h2 class="fw-bold text-navy mb-4">Skill</h2>
+      <div class="d-flex flex-wrap gap-2">
+        <span class="badge-skill">HTML</span>
+        <span class="badge-skill">CSS</span>
+        <span class="badge-skill">JavaScript</span>
+        <span class="badge-skill">Bootstrap</span>
+        <span class="badge-skill">Git</span>
+        <span class="badge-skill">Responsive Design</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proyek -->
+  <section id="projects" class="section bg-surface">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between mb-4">
+        <h2 class="fw-bold text-navy mb-0">Proyek</h2>
+        <a href="#contact" class="btn btn-outline-primary focus-ring">Butuh bantuan?</a>
+      </div>
+      <div class="row g-4">
+        <div class="col-sm-6 col-lg-4">
+          <div class="card card-project h-100 border-0 shadow-sm">
+            <img src="https://picsum.photos/seed/proj1/600/400" class="card-img-top" alt="Gambar proyek 1">
+            <div class="card-body">
+              <h5 class="card-title">Landing Page Minimal</h5>
+              <p class="card-text text-muted">Desain bersih dengan fokus CTA dan performa.</p>
+              <div class="d-flex flex-wrap gap-2 mb-3">
+                <span class="badge bg-info-subtle text-info-emphasis">HTML</span>
+                <span class="badge bg-info-subtle text-info-emphasis">CSS</span>
+                <span class="badge bg-info-subtle text-info-emphasis">Bootstrap</span>
+              </div>
+              <a href="#" class="btn btn-primary focus-ring">Kunjungi</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="card card-project h-100 border-0 shadow-sm">
+            <img src="https://picsum.photos/seed/proj2/600/400" class="card-img-top" alt="Gambar proyek 2">
+            <div class="card-body">
+              <h5 class="card-title">Dashboard Ringkas</h5>
+              <p class="card-text text-muted">Komponen reusable dan tata letak responsif.</p>
+              <div class="d-flex flex-wrap gap-2 mb-3">
+                <span class="badge bg-info-subtle text-info-emphasis">JavaScript</span>
+                <span class="badge bg-info-subtle text-info-emphasis">Bootstrap</span>
+              </div>
+              <a href="#" class="btn btn-primary focus-ring">Kunjungi</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="card card-project h-100 border-0 shadow-sm">
+            <img src="https://picsum.photos/seed/proj3/600/400" class="card-img-top" alt="Gambar proyek 3">
+            <div class="card-body">
+              <h5 class="card-title">Komponen UI</h5>
+              <p class="card-text text-muted">Koleksi komponen UI ringan untuk proyek.</p>
+              <div class="d-flex flex-wrap gap-2 mb-3">
+                <span class="badge bg-info-subtle text-info-emphasis">CSS</span>
+                <span class="badge bg-info-subtle text-info-emphasis">Bootstrap</span>
+              </div>
+              <a href="#" class="btn btn-primary focus-ring">Kunjungi</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontak -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2 class="fw-bold text-navy mb-3">Kontak</h2>
+      <p class="text-muted-2 mb-4">Tertarik bekerja sama atau punya pertanyaan? Silakan hubungi saya.</p>
+      <div class="d-flex flex-wrap gap-3">
+        <a href="mailto:email@example.com" class="btn btn-primary focus-ring" aria-label="Email saya"><i class="bi bi-envelope-fill me-2"></i>Email</a>
+        <a href="https://wa.me/6281234567890" target="_blank" rel="noopener" class="btn btn-outline-primary focus-ring" aria-label="WhatsApp saya"><i class="bi bi-whatsapp me-2"></i>WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="section pt-5 pb-4 bg-surface">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center">
+        <p class="mb-0 text-muted-2">© 2025 Nama Anda. Semua hak dilindungi.</p>
+        <div class="d-flex gap-3">
+          <a href="#" aria-label="GitHub" class="text-navy focus-ring"><i class="bi bi-github fs-5"></i></a>
+          <a href="#" aria-label="LinkedIn" class="text-navy focus-ring"><i class="bi bi-linkedin fs-5"></i></a>
+          <a href="#" aria-label="Twitter/X" class="text-navy focus-ring"><i class="bi bi-twitter-x fs-5"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS Bundle (includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Init basic behaviors -->
+  <script>
+    // Activate Scrollspy
+    const dataSpyList = [...document.querySelectorAll('[data-bs-spy="scroll"]')];
+    dataSpyList.forEach(el => {
+      bootstrap.ScrollSpy.getInstance(el) || new bootstrap.ScrollSpy(el);
+    });
+
+    // Offset fix for anchor with fixed navbar (native smooth via CSS)
+    const links = document.querySelectorAll('a.nav-link, a.btn');
+    links.forEach(link => {
+      link.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          const target = document.querySelector(href);
+          if (target) {
+            // Use default browser smooth scroll from CSS
+          }
+        }
+      });
+    });
+  </script>
+<!-- Theme, Animations, and Utility Styles -->
+  <style>
+    /* Dark theme overrides */
+    [data-bs-theme="dark"] body { background-color: #0B1220; color: #E5E7EB; }
+    [data-bs-theme="dark"] .text-navy { color: #E5E7EB; }
+    [data-bs-theme="dark"] .navbar-custom { background-color: rgba(17,24,39,0.75); }
+    [data-bs-theme="dark"] .bg-surface { background-color: #111827; }
+    [data-bs-theme="dark"] .btn-primary { background-color: var(--cyan); border-color: var(--cyan); color: #0B1220; }
+    [data-bs-theme="dark"] .btn-primary:hover, [data-bs-theme="dark"] .btn-primary:focus { background-color: #22D3EE; border-color: #22D3EE; }
+    [data-bs-theme="dark"] .btn-outline-primary { color: #22D3EE; border-color: #22D3EE; }
+    [data-bs-theme="dark"] .btn-outline-primary:hover, [data-bs-theme="dark"] .btn-outline-primary:focus { color: #0B1220; background-color: #22D3EE; border-color: #22D3EE; }
+    [data-bs-theme="dark"] .badge-skill { background-color: #0F172A; color: #E5E7EB; border-color: rgba(229,231,235,0.12); }
+
+    /* Reveal animations */
+    .reveal { opacity: 0; transform: translateY(12px); transition: opacity .35s ease, transform .35s ease; }
+    .reveal.show { opacity: 1; transform: none; }
+
+    /* Floating action buttons */
+    #backToTop, #themeToggle { position: fixed; z-index: 1030; }
+    #backToTop { bottom: 24px; right: 24px; display: none; }
+    #themeToggle { bottom: 24px; left: 24px; }
+  </style>
+
+  <!-- Floating Theme Toggle -->
+  <button id="themeToggle" class="btn btn-light border shadow focus-ring" type="button" aria-label="Ubah tema" title="Ubah tema">
+    <i class="bi bi-moon-stars-fill"></i>
+  </button>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" class="btn btn-primary shadow focus-ring" type="button" aria-label="Kembali ke atas" title="Kembali ke atas">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- Enhancements: theme persistence, back-to-top, reveal animations -->
+  <script>
+    (function() {
+      const root = document.documentElement;
+      const metaTheme = document.querySelector('meta[name="theme-color"]');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+      const stored = localStorage.getItem('theme');
+
+      function applyTheme(mode) {
+        root.setAttribute('data-bs-theme', mode === 'dark' ? 'dark' : 'light');
+        const isDark = root.getAttribute('data-bs-theme') === 'dark';
+        if (metaTheme) metaTheme.setAttribute('content', isDark ? '#0B1220' : '#0F172A');
+
+        const tbtn = document.getElementById('themeToggle');
+        if (tbtn) {
+          tbtn.classList.toggle('btn-light', !isDark);
+          tbtn.classList.toggle('btn-dark', isDark);
+          const icon = tbtn.querySelector('i');
+          if (icon) icon.className = isDark ? 'bi bi-sun-fill' : 'bi bi-moon-stars-fill';
+          tbtn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+          tbtn.setAttribute('title', isDark ? 'Tema gelap aktif' : 'Tema terang aktif');
+        }
+      }
+
+      let mode = stored || (prefersDark.matches ? 'dark' : 'light');
+      applyTheme(mode);
+
+      prefersDark.addEventListener('change', (e) => {
+        if (!localStorage.getItem('theme')) {
+          mode = e.matches ? 'dark' : 'light';
+          applyTheme(mode);
+        }
+      });
+
+      const tbtn = document.getElementById('themeToggle');
+      if (tbtn) {
+        tbtn.addEventListener('click', () => {
+          mode = (root.getAttribute('data-bs-theme') === 'dark') ? 'light' : 'dark';
+          localStorage.setItem('theme', mode);
+          applyTheme(mode);
+        });
+      }
+
+      // Back to top
+      const back = document.getElementById('backToTop');
+      const showAfter = 300;
+      function onScroll() {
+        if (!back) return;
+        back.style.display = (window.scrollY > showAfter) ? 'block' : 'none';
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      if (back) {
+        back.addEventListener('click', () => {
+          const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+        });
+      }
+      onScroll();
+
+      // Reveal animations
+      const revealEls = Array.from(document.querySelectorAll('.section, .card-project'));
+      revealEls.forEach(el => el.classList.add('reveal'));
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!reduceMotion && 'IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries, obs) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('show');
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.15 });
+        revealEls.forEach(el => io.observe(el));
+      } else {
+        revealEls.forEach(el => el.classList.add('show'));
+      }
+    })();
+  </script>
+
+</body>
+</html>
